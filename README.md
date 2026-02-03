@@ -1,5 +1,7 @@
 # IR2025 Retrieval — BM25 Baseline vs Semantic Search (MiniLM + FAISS)
 
+
+
 > **Goal:** Build and evaluate an Information Retrieval system on the IR2025 dataset, comparing a strong lexical baseline (**BM25**) with a semantic pipeline (**Transformer embeddings + FAISS**) using **TREC** run files and **trec_eval** metrics.
 
 ---
@@ -28,6 +30,16 @@ This repository contains:
 The main deliverable is a clean comparison table (Phase 1 vs Phase 2) produced from the same dataset and relevance judgments.
 
 ---
+
+
+# Descriprion
+
+- Built a semantic and lexical information retrieval pipeline using sentence embeddings (all-MiniLM-L6-v2), batching, mean pooling, and L2 normalization. 
+- Indexed document vectors with FAISS (IndexFlatIP) for efficient top-k retrieval per query. 
+- Generated TREC run files and evaluated performance using trec_eval (MAP, Precision@k). 
+- Benchmarked against a BM25 baseline, achieving MAP 0.64 (BM25@50) and MAP 0.26 (Semantic@50), highlighting dataset sensitivity and retrieval trade-offs. 
+
+
 
 ## Methods
 
